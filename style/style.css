@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+body {
+  --background-card-input: hsl(235, 24%, 19%);
+  --background-color: hsl(235, 21%, 11%);
+  --font: hsl(234, 39%, 85%);
+  --img-top: url(../images/bg-desktop-dark.jpg);
+  --top-img-mobile: url(../images/bg-mobile-dark.jpg);
+  --toggle-btn: url(../images/icon-sun.svg);
+  --hover-color: white;
+  background-color: var(--background-color);
+  color: var(--font);
+}
+.light-mode {
+  --img-top: url("../images/bg-desktop-light.jpg");
+  --top-img-mobile: url(../images/bg-mobile-light.jpg);
+
+  --toggle-btn: url("../images/icon-moon.svg");
+  background-color: hsl(236, 33%, 92%);
+  --font: hsl(235, 19%, 35%);
+  --background-card-input: white;
+  --hover-color: black;
+}
+.img-top {
+  background-image: var(--img-top);
+  min-height: 30vh;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+}
+
+.main {
+  position: relative;
+  bottom: 165px;
+  padding: 25px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  letter-spacing: 10px;
+  margin-bottom: 25px;
+}
+.header h2 {
+  font-size: 2em;
+}
+.toggle-theme {
+  background-image: var(--toggle-btn);
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.add-todo {
+  width: 100%;
+  background-color: var(--background-card-input);
+  padding: 10px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid hsl(237, 14%, 26%);
+  background-color: transparent;
+  color: hsl(237, 14%, 26%);
+}
+#add-todo {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-left: 20px;
+  font-size: 20px;
+  color: var(--font);
+}
+
+#add-todo:focus {
+  outline: none;
+}
+.card {
+  margin-top: 20px;
+  background-color: var(--background-card-input);
+
+  border-radius: 5px;
+}
+.task,
+.contain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.task label {
+  cursor: pointer;
+}
+.checkbox-none {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  visibility: hidden;
+}
+.checkbox-none::after {
+  content: " ";
+  background-color: var(--background-card-input);
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 3px;
+  color: var(--font);
+  width: 20px;
+  height: 20px;
+  visibility: visible;
+  border: 1px solid var(--font);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+.checkbox-none:checked:after {
+  content: "\2714";
+
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+li {
+  padding: 20px;
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: hsl(235, 19%, 35%);
+  margin-top: 10px;
+  padding: 0;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 20px 20px;
+}
+.clear {
+  cursor: pointer;
+}
+.clear:hover {
+  color: var(--hover-color);
+}
+
+.footer {
+  margin-top: 20px;
+  background-color: var(--background-card-input);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.footer p {
+  margin-right: 20px;
+  cursor: pointer;
+}
+.footer p:hover {
+  color: var(--hover-color);
+}
+
+.active {
+  color: hsl(220, 98%, 61%);
+}
+
+@media screen and (max-width: 768px) {
+  .img-top {
+    background-image: var(--top-img-mobile);
+    background-size: 100%;
+  }
+  li {
+    padding: 5px 20px 5px 10px;
+  }
+  label {
+    font-size: 12px;
+  }
+  .checkbox-none::after {
+    width: 10px;
+    height: 10px;
+    margin-top: 17px;
+  }
+  li span img {
+    width: 80%;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Todo app</title>
+    <!-- font-family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- style -->
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="img-top"></div>
+    <section class="main">
+      <div class="header">
+        <h2>TODO</h2>
+
+        <div class="toggle-theme"></div>
+      </div>
+      <div class="add-todo">
+        <button class="circle">+</button>
+        <input type="text" id="add-todo" />
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="tasks">
+            <ul id="list"></ul>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p><span class="itemsleft">0</span> Items left</p>
+          <a class="clear">ClearCompleted</a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p class="show-all active"><a>ALL</a></p>
+        <p class="filter-active"><a>Active</a></p>
+        <p class="filter-completed"><a>Completed</a></p>
+      </div>
+    </section>
+
+    <!-- script -->
+    <script src="js/Sortable.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
